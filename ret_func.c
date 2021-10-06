@@ -23,26 +23,14 @@ int ret_char(va_list arg)
 
 int ret_str(va_list arg)
 {
-	int i;
+	
+	char *s = va_arg(l, char *);
 
-	char *str = va_arg(arg, char*);
+	(void)f;
 
-	if (str == NULL)
-	{
-		str = "(null)";
-	}
-
-	else if (*str == '\0')
-	{
-		return (-1);
-	}
-
-	for (i = 0; str[i]; i++)
-	{
-		_putchar(str[i]);
-	}
-
-	return (i);
+	if (!s)
+		s = "(null)";
+	return (_puts(s));
 
 }
 
